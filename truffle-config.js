@@ -10,8 +10,8 @@ module.exports = {
      network_id: "*",
     },
     dev: {
-      url: `http://marshmallow:8002/fb9443fd-4035-4c94-b793-37add1e493af`,
-      network_id: "*",
+      url: `http://marshmallow:8002/69dc4574-02f5-4dcb-be0d-60cc51f542ad`,
+      network_id: "1337",
       gas: 5500000
     },
     sandbox: {
