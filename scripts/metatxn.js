@@ -16,7 +16,7 @@ const main = async (cb) => {
 
     // update provider and claim gaslessly
 
-    const configuration = await resolveConfigurationGSN(web3.currentProvider, { paymasterAddress: '0x891d1B9118b20760a37F047e1cB71D1d0883ca89' });
+    const configuration = await resolveConfigurationGSN(web3.currentProvider, { paymasterAddress: '0x038c2778a96C910f73c52abaE6482548934A7354' });
     const provider = new RelayProvider(web3.currentProvider, configuration);
     provider.init();
     web3.setProvider(provider);
