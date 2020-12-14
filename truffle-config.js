@@ -9,6 +9,11 @@ module.exports = {
      port: 8545,
      network_id: "*",
     },
+    dev: {
+      url: `http://marshmallow:8002/fb9443fd-4035-4c94-b793-37add1e493af`,
+      network_id: "*",
+      gas: 5500000
+    },
     sandbox: {
       url: `https://sandbox.truffleteams.com/59abc1ee-2123-4491-8507-4408ee2274db`,
       network_id: "*",
