@@ -7,16 +7,16 @@ const main = async (cb) => {
   try {
     const accounts = await web3.eth.getAccounts();
 
-    // claim with gas from the default account (using the default provider)
+    // claim gasfully
 
     // x = await TruffleBadge.deployed();
     // x.claimBadgeNoGas();
 
 
 
-    // update provider and claim gaslessly
+    // claim gaslessly via updated provider
 
-    const configuration = await resolveConfigurationGSN(web3.currentProvider, { paymasterAddress: '0x038c2778a96C910f73c52abaE6482548934A7354' });
+    const configuration = await resolveConfigurationGSN(web3.currentProvider, { paymasterAddress: '0xbA12556B4bc8423A7D680572B2D47b86b02De049' });
     const provider = new RelayProvider(web3.currentProvider, configuration);
     provider.init();
     web3.setProvider(provider);
@@ -24,6 +24,20 @@ const main = async (cb) => {
 
     const metaBadge = new web3.eth.Contract(TruffleBadge.abi, TruffleBadge.address);
     await metaBadge.methods.claimBadgeNoGas().send({ from: accounts[0] });
+
+    // const metaBadge = new web3.eth.Contract(TruffleBadge.abi, TruffleBadge.address);
+    // const encoded = metaBadge.methods.claimBadgeNoGas().encodeABI();
+    // let newAccount = web3.eth.accounts.create();
+
+    // var tx = {
+    //     to : TruffleBadge.address,
+    //     data : encoded,
+    //     gas: 4712388,
+    //     gasPrice: 100000000000
+    // }
+
+    // const signedTx = await web3.eth.accounts.signTransaction(tx, newAccount.privateKey);
+    // console.log(await web3.eth.sendSignedTransaction(signedTx.rawTransaction));
 
   } catch(err) {
     console.log('oops', err.message);
