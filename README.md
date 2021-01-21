@@ -1,3 +1,3 @@
 # Truffle Badge
 
-...
+👋
